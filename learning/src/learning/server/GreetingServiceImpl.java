@@ -30,6 +30,10 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 		return "Hello, " + input + "!<br><br>I am running " + serverInfo
 				+ ".<br><br>It looks like you are using:<br>" + userAgent;
 	}
+	
+	public String sayHello(){
+		return "Say Hello";
+	}
 
 	/**
 	 * Escape an html string. Escaping data received from the client helps to
