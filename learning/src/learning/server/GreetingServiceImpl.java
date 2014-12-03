@@ -2,6 +2,7 @@ package learning.server;
 
 import learning.client.GreetingService;
 import learning.shared.FieldVerifier;
+
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**
@@ -49,4 +50,10 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 		return html.replaceAll("&", "&amp;").replaceAll("<", "&lt;")
 				.replaceAll(">", "&gt;");
 	}
+
+    @Override
+    public String implementUseCase() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }
