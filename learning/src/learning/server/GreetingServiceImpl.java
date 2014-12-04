@@ -18,7 +18,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 			// If the input is not valid, throw an IllegalArgumentException back to
 			// the client.
 			throw new IllegalArgumentException(
-					"Name must be at least 4 characters long");
+                "Name must be at least 4 characters long + CR desenvolvida");
 		}
 
 		String serverInfo = getServletContext().getServerInfo();
