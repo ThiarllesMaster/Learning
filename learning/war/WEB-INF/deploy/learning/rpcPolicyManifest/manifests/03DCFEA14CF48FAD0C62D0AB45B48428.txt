@@ -1,0 +1,2 @@
+serviceClass: learning.client.TimeService
+path: A0B737655DB2F583D317A20D925CD23C.gwt.rpc

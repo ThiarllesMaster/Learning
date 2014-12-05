@@ -1,0 +1,2 @@
+serviceClass: learning.client.GreetingService
+path: 9E447EE0D0BC56AA358AF45C59193573.gwt.rpc

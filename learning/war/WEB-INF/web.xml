@@ -6,19 +6,27 @@
          xmlns="http://java.sun.com/xml/ns/javaee">
 
   <!-- Servlets -->
-  <servlet>
-    <servlet-name>greetServlet</servlet-name>
-    <servlet-class>learning.server.GreetingServiceImpl</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/learning/greet</url-pattern>
-  </servlet-mapping>
   
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>Learning.html</welcome-file>
   </welcome-file-list>
+<filter>
+	<filter-name>ObjectifyFilter</filter-name>
+	<filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
+</filter>
+	<filter-mapping>
+		<filter-name>ObjectifyFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+<!-- Servlet configurations -->
+<servlet>
+	<servlet-name>timeService</servlet-name>
+	<servlet-class>learning.server.TimerServiceImpl</servlet-class>
+</servlet>
 
+	<servlet-mapping>
+		<servlet-name>timeService</servlet-name>
+		<url-pattern>learning/timeService</url-pattern>
+	</servlet-mapping>
 </web-app>
