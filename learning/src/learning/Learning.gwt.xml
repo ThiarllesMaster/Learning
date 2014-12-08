@@ -27,6 +27,7 @@
   <source path='client'/>
   <source path='shared'/>
   <source path='domain' />
+  <source path='resources' />
 
   <!-- allow Super Dev Mode -->
   <add-linker name="xsiframe"/>

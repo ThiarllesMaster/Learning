@@ -1,0 +1,54 @@
+@CHARSET "ISO-8859-1";
+
+@external .label .imageCustomer .anchor .financeIcon .financeTitle .firstPanel .secondPanel .studentLink .linkStudent .materialink .linkMaterial; 
+body {
+	background-color: white;
+	margin: 0px;
+}
+.label {
+	width: 400px;
+	font-size: 20px;
+	text-align: center;
+	margin-top: 50px;
+}
+.imageCustomer {
+	margin-top: 60px;
+	margin-left: 100px;
+}
+.anchor {
+	margin-top: 70px;
+	margin-left: 90px;
+}
+.financeIcon {
+	margin-top: 80px;
+	margin-left: 0px;
+}
+
+.studentLink {
+	margin-left: 10px;
+}
+
+.linkMaterial {
+	margin-top: 80px;
+	margin-left: 10px;
+}
+.financeTitle {
+	margin-left: 90px;
+}
+.materialink {
+	margin-left: 0px;
+	margin-top: 60px;
+}
+.firstPanel {
+	margin-top: 100px;
+	margin-left: 150px;
+	width: 200px;
+}
+.secondPanel {
+	margin-top: 100px;
+	margin-left: 100px;
+	
+}
+.linkStudent {
+	margin-left: 10px;
+}
