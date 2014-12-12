@@ -2,7 +2,16 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
 	<ui:style src="../../resources/css/style.css"></ui:style>
-	<g:HTMLPanel ui:field="panel">
-		<g:HorizontalPanel ui:field="content" />
-	</g:HTMLPanel>
+
+	<g:HorizontalPanel ui:field="panel">
+	<g:VerticalPanel ui:field="verticalPanelLeft">
+		<g:Anchor ui:field="anchorCustomer"></g:Anchor>
+		<g:Anchor ui:field="financeLink"></g:Anchor>
+		</g:VerticalPanel>
+		<g:VerticalPanel ui:field="verticalPanelRight">
+		<g:Anchor ui:field="studentLink"></g:Anchor>
+		<g:Anchor ui:field="materialLink"></g:Anchor>
+		</g:VerticalPanel>
+	</g:HorizontalPanel>
+	
 </ui:UiBinder> 

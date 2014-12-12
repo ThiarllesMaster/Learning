@@ -1,28 +1,47 @@
 package learning.client.binder;
 
+import learning.client.place.CustomerPlace;
 import learning.resources.MyResources;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
-import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 
-public class Home extends Composite {
+public class Home extends Composite implements HomeView {
 
     private static HomeUiBinder uiBinder = GWT.create(HomeUiBinder.class);
 
     @UiField
-    HTMLPanel panel;
+    HorizontalPanel panel;
 
     @UiField
-    HorizontalPanel content;
+    Anchor anchorCustomer;
+
+    @UiField
+    Anchor financeLink;
+
+    @UiField
+    Anchor studentLink;
+
+    @UiField
+    Anchor materialLink;
+
+    @UiField
+    VerticalPanel verticalPanelRight;
+
+    @UiField
+    VerticalPanel verticalPanelLeft;
+
+    Presenter presenter;
+
 
 
     interface HomeUiBinder extends UiBinder<Widget, Home> {
@@ -30,61 +49,60 @@ public class Home extends Composite {
 
     public Home() {
         initWidget(uiBinder.createAndBindUi(this));
-        Label title = new Label("Learning system using GWT");
-        title.addStyleName("label");
-        panel.add(title);
 
-        // First Panel Elements...
-        VerticalPanel panelOne = new VerticalPanel();
-        panelOne.addStyleName("firstPanel");
-        Image customerIcon = new Image(MyResources.INSTANCE.customer());
-        panelOne.add(customerIcon);
+        panel.addStyleName("panelLeft");
 
-        Anchor linkServiceCustomer = new Anchor();
-        linkServiceCustomer.setText("Customers");
+        Image iconCustomer = new Image(MyResources.INSTANCE.customer());
+        anchorCustomer.addStyleName("default");
+        anchorCustomer.setText("Customer's Service");
 
-        panelOne.add(linkServiceCustomer);
-
-        Image financeIcon = new Image(MyResources.INSTANCE.finance());
-        financeIcon.addStyleName("financeIcon");
-        panelOne.add(financeIcon);
-
-        Anchor financeLink = new Anchor();
+        Image iconFinance = new Image(MyResources.INSTANCE.finance());
+        iconFinance.addStyleName("image");
+        financeLink.addStyleName("default");
         financeLink.setText("Finance Department");
+        
+        verticalPanelLeft.add(iconCustomer);
+        verticalPanelLeft.add(anchorCustomer);
+        verticalPanelLeft.add(iconFinance);
+        verticalPanelLeft.add(financeLink);
 
-        panelOne.add(financeLink);
 
+        Image studentIcon = new Image(MyResources.INSTANCE.attendees());
+        Image materialsIcon = new Image(MyResources.INSTANCE.materials());
+        materialsIcon.addStyleName("image");
 
-        // Second Panel Elements...
-        VerticalPanel panelTwoPanel = new VerticalPanel();
-        panelTwoPanel.addStyleName("secondPanel");
+        verticalPanelRight.addStyleName("panelRight");
 
-        Image atendeers = new Image(MyResources.INSTANCE.attendees());
-        panelTwoPanel.add(atendeers);
+        verticalPanelRight.add(studentIcon);
 
-        Anchor studentLink = new Anchor("Students");
         studentLink.addStyleName("studentLink");
         studentLink.setText("Students");
-
-        panelTwoPanel.add(studentLink);
-
-        Image materialsIcon = new Image(MyResources.INSTANCE.materials());
-        materialsIcon.addStyleName("materialink");
-
-        Anchor materialLink = new Anchor();
-        materialLink.addStyleName("linkMaterial");
+        verticalPanelRight.add(studentLink);
+        verticalPanelRight.add(materialsIcon);
         materialLink.setText("Materials");
+        materialLink.addStyleName("default");
+        verticalPanelRight.add(materialLink);
 
-        panelTwoPanel.add(materialsIcon);
-        panelTwoPanel.add(materialLink);
+        panel.add(verticalPanelLeft);
+        panel.add(verticalPanelRight);
 
-
-        content.add(panelOne);
-        content.add(panelTwoPanel);
-
-        panel.add(content);
 
     }
+
+    @Override
+    public void setPresenter(Presenter presenter) {
+        this.presenter = presenter;
+
+    }
+
+    @UiHandler("anchorCustomer")
+    public void navigateCustomer(ClickEvent event) {
+        presenter.goTo(new CustomerPlace());
+
+    }
+
+
+
 
 
 

@@ -15,20 +15,39 @@ h1 {
   font-size: 16pt;
 }
 
-/** Most GWT widgets already have a style name defined */
-.gwt-DialogBox {
-  width: 400px;
+.default {
+	cursor: pointer;
+	margin-left: 0px;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	
 }
-
-.dialogVPanel {
-  margin: 5px;
+.imageCustomer {
+	margin-left: 300px;
 }
-
-.serverResponseLabelError {
-  color: red;
+.panelLeft {
+	margin-top: 200px;
+	margin-left: 300px;
 }
-
-/** Set ids using widget.getElement().setId("idOfElement") */
-#closeButton {
-  margin: 15px 6px 6px;
+.panelRight {
+	margin-left: 100px;
+}
+.linkStudent {
+	margin-left: 10px;
+}
+.navigation {
+	border: 1px;
+}
+.image {
+	margin-top: 200px;
+}
+.imageStudent {
+	margin-left: 200px;
+}
+.studentLink {
+	margin-left: 600px;
+	cursor: pointer;
+}
+.panelRight {
+	margin-left: 400px;
 }
