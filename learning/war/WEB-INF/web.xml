@@ -29,4 +29,17 @@
 		<servlet-name>timeService</servlet-name>
 		<url-pattern>learning/timeService</url-pattern>
 	</servlet-mapping>
+
+<!-- Servlet to Training -->
+<servlet>
+<servlet-name>trainingService</servlet-name>
+<servlet-class>learning.server.TrainingServiceImpl</servlet-class>
+</servlet>
+
+
+<servlet-mapping>
+<servlet-name>trainingService</servlet-name>
+<url-pattern>learning/trainingService</url-pattern>
+</servlet-mapping>
 </web-app>
+

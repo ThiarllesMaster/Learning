@@ -1,6 +1,7 @@
 package learning.server;
 
 import learning.domain.Time;
+import learning.domain.Training;
 
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyFactory;
@@ -10,6 +11,7 @@ public class OfyService {
 
     static {
         factory().register(Time.class);
+        factory().register(Training.class);
     }
 
     public static Objectify ofy() {

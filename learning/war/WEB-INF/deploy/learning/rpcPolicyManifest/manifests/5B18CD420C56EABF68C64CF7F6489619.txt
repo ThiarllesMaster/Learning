@@ -1,0 +1,2 @@
+serviceClass: learning.client.TrainingService
+path: C212AF21F343EFD6106957D2865F55DD.gwt.rpc

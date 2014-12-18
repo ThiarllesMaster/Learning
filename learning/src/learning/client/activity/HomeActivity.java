@@ -13,6 +13,7 @@ public class HomeActivity extends AbstractActivity
 implements HomeView.Presenter {
 
     private ClientFactory clientFactory;
+    @SuppressWarnings("unused")
     private HomePlace homePlace;
 
     public HomeActivity(ClientFactory clientFactory, HomePlace homePlace) {

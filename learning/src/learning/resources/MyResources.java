@@ -20,4 +20,13 @@ public interface MyResources extends ClientBundle {
     @Source("materials.png")
     ImageResource materials();
 
+    @Source("customer_register.png")
+    ImageResource customerRegister();
+
+    @Source("needs.jpg")
+    ImageResource getNeeds();
+
+    @Source("training.png")
+    ImageResource getTraining();
+
 }

@@ -6,9 +6,9 @@
 		font-weight: bold;
 	}
 	</ui:style>
-	<g:HTMLPanel>
-	You must access here!	
-		<g:Button styleName="{style.important}" ui:field="button" />
+	<g:HTMLPanel ui:field="panel" >
+	<g:Anchor ui:field="createTraining"></g:Anchor>
 	</g:HTMLPanel>
+	
 	
 </ui:UiBinder> 

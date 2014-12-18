@@ -1,11 +1,13 @@
 package learning.client.mapper;
 
 import learning.client.ClientFactory;
-import learning.client.activity.CustomerActivity;
 import learning.client.activity.HomeActivity;
-import learning.client.place.CustomerPlace;
+import learning.client.activity.TrainingActivity;
+import learning.client.activity.TrainingManagementActivity;
 import learning.client.place.FinancePlace;
 import learning.client.place.HomePlace;
+import learning.client.place.TrainingManagementPlace;
+import learning.client.place.TrainingPlace;
 
 import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.activity.shared.ActivityMapper;
@@ -31,8 +33,12 @@ public class AppActivityMapper implements ActivityMapper {
 
         } else if (place instanceof FinancePlace) {
 
-        } else if (place instanceof CustomerPlace) {
-            return new CustomerActivity(factory, (CustomerPlace) place);
+        } else if (place instanceof TrainingPlace) {
+            return new TrainingActivity(factory, (TrainingPlace) place);
+
+        } else if (place instanceof TrainingManagementPlace) {
+            return new TrainingManagementActivity(factory, (TrainingManagementPlace) place);
+
 
         }
         return null;

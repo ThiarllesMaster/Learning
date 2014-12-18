@@ -1,6 +1,6 @@
 package learning.client.binder;
 
-import learning.client.place.CustomerPlace;
+import learning.client.place.TrainingPlace;
 import learning.resources.MyResources;
 
 import com.google.gwt.core.client.GWT;
@@ -52,16 +52,16 @@ public class Home extends Composite implements HomeView {
 
         panel.addStyleName("panelLeft");
 
-        Image iconCustomer = new Image(MyResources.INSTANCE.customer());
+        Image iconNeedsTreinament = new Image(MyResources.INSTANCE.getNeeds());
         anchorCustomer.addStyleName("default");
-        anchorCustomer.setText("Customer's Service");
+        anchorCustomer.setText("Training Needs");
 
         Image iconFinance = new Image(MyResources.INSTANCE.finance());
         iconFinance.addStyleName("image");
         financeLink.addStyleName("default");
         financeLink.setText("Finance Department");
         
-        verticalPanelLeft.add(iconCustomer);
+        verticalPanelLeft.add(iconNeedsTreinament);
         verticalPanelLeft.add(anchorCustomer);
         verticalPanelLeft.add(iconFinance);
         verticalPanelLeft.add(financeLink);
@@ -97,7 +97,7 @@ public class Home extends Composite implements HomeView {
 
     @UiHandler("anchorCustomer")
     public void navigateCustomer(ClickEvent event) {
-        presenter.goTo(new CustomerPlace());
+        presenter.goTo(new TrainingPlace());
 
     }
 
